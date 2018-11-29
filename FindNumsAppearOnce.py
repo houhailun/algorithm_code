@@ -14,7 +14,7 @@
 
 class Solution:
     def find_number_appear_once(self, array):
-        if array is None or len(array) < 2:
+        if not array or len(array) < 2:
             return None
 
         # 第一次异或全部数字
@@ -29,8 +29,7 @@ class Solution:
             ix += 1
 
         # 根据第ix位是否为1，分为两个数组
-        arr1 = []
-        arr2 = []
+        arr1, arr2 = [], []  # 注意不能写为arr1=arr2=[]
         for num in array:
             if num & (0x1 << ix):
                 arr1.append(num)
@@ -39,10 +38,10 @@ class Solution:
 
         # 两个数组分别异或
         ret1 = ret2 = 0
-        for i in range(len(arr1)):
-            ret1 ^= arr1[i]
-        for i in range( len(arr2)):
-            ret2 ^= arr2[i]
+        for i in arr1:
+            ret1 ^= i
+        for j in arr2:
+            ret2 ^= j
 
         return ret1, ret2
 

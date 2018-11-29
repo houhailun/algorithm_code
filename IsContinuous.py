@@ -8,7 +8,8 @@
 
 解题思路：
     方法一：先排序，检查0的个数，检查间隔的牌数，如果间隔的牌数大于0的个数，则不是顺子
-    方法二：用hash表来做，避免了排序，只需计算最大的键值和最小的键值的差，若小于4，不需考虑有多少大小王，都可以组成顺子。
+    方法二：用hash表来做，避免了排序，只需计算最大的键值和最小的键值的差，若小于4，不需考虑有多少大小王，都可以组成顺子
+        没有对子的前提下，如果是顺子，5 张牌必然最大值-最小值必然小于4
 """
 
 
@@ -21,7 +22,7 @@ class Solution:
         num_of_zero = numbers.count(0)  # 大小王的个数
         num_of_gap = 0
         for ix in range(num_of_zero+1, len(numbers)):
-            if numbers[ix] == numbers[ix-1]:
+            if numbers[ix] == numbers[ix-1]:  # 对子，非顺子
                 return False
             num_of_gap += numbers[ix]-numbers[ix-1]-1
 

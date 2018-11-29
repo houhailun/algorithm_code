@@ -15,18 +15,17 @@ class Solution:
     def last_remain_solution(self, n, m):
         if n == 1 or m == 0:
             return -1
-        s = [x for x in range(n)]  # 产生等差数列
-        p = m - 1
-        while len(s) != 1:
-            # 这里用while而不是if  因为处理一次后的p可能仍>len(s)-1. 所以必须处理到p值满足list的index条件为止
-            while p > len(s) - 1:  # 超过了尾数的index
-                # 这个条件要放在最前面,为了防止p一上来就设置的大于len(s)-1
-                p = p - (len(s) - 1) - 1  # -1 减1 是因为index从0计数
-            s.pop(p)
-            p += (m - 1)
-        return s[0]
+        people = list(range(1, n+1))
+        p = 0
+        while True:
+            if len(people) == 1:
+                break
+            p = (p + (m-1)) % len(people)  # 更新p
+            del people[p]
+
+        return people[0]
 
 
 if __name__ == "__main__":
     cls = Solution()
-    print(cls.last_remain_solution(5,3))
+    print(cls.last_remain_solution(6,4))

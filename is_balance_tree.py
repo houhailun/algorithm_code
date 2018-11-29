@@ -16,6 +16,7 @@ class Solution:
         if not tree:
             return True
 
+        # 获取左右子树的深度
         left = self.max_depth(tree.left)
         right = self.max_depth(tree.right)
 
@@ -34,13 +35,14 @@ class Solution:
 
     def is_balance_tree_2(self, tree):
         # 上面的方法有个缺点是先从上面的节点依次检查子树深度，然后递归往下继续判断，造成很多结点重复判断深度
-        # 这里可以:从下往上检查，如果子树是平衡二叉树，返回子树的深度，如果子树不是平衡二叉树则直接返回false
+        # 这里可以:从下往上检查（后序遍历），如果子树是平衡二叉树，返回子树的深度，如果子树不是平衡二叉树则直接返回false
         return self.get_depth(tree) != -1
 
     def get_depth(self, tree):
         if tree is None:
             return 0
-        # 左右子树深度
+
+        # 后序遍历获取左右子树深度
         left = self.get_depth(tree.left)
         right = self.get_depth(tree.right)
 
@@ -51,4 +53,4 @@ class Solution:
             return -1
 
         # 左右子树深度差是否为1
-        return -1 if(abs(left-right)>1) else 0
+        return -1 if abs(left-right) > 1 else 0
