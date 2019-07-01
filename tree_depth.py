@@ -23,11 +23,12 @@ class Solution:
         if not pRoot:
             return 0
 
+        # 树深度为左右子树深度的大值+1
         left = self.TreeDepth(pRoot.left)
         right = self.TreeDepth(pRoot.right)
         return max(left, right)+1
 
-    def TreeDepth_2(self, pRoot):
+    def TreeDepth_v2(self, pRoot):
         if not pRoot:
             return 0
         return self.tree_depth(pRoot)

@@ -36,7 +36,7 @@ class Solution:
         s = list(s)
         self.reverse(s, 0, n-1)         # 翻转前字串
         self.reverse(s, n, len(s)-1)    # 翻转后字串
-        self.reverse(s, 0, len(s) - 1)  # 翻转整个字符串
+        self.reverse(s, 0, len(s)-1)  # 翻转整个字符串
         return ''.join(s)  # 转换位str
 
     def reverse(self, s, start, end):

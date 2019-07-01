@@ -14,11 +14,13 @@
 import heapq
 import math
 
+
 class Solution:
     def __init__(self):
         self.data = []
         self.cnt = 0
 
+    # 方法1：排序后查找中位数
     def Insert(self, num):
         self.data.append(num)
         self.cnt += 1
@@ -30,6 +32,7 @@ class Solution:
         else:
             return (self.data[(self.cnt+1) // 2] + self.data[(self.cnt-1) // 2]) / 2
 
+    # 方法2：利用heapq模块实现(最小堆)
     def insert(self, num):
         heapq.heappush(self.data, num)
 

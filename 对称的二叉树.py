@@ -27,21 +27,21 @@ class Solution:
         return self.check_tree(pRoot.left, pRoot.right)
 
     def check_tree(self, left, right):
-        if not left and not right:
+        if not left and not right:  # 左右子树都遍历完成，是对称树
             return True
-        if not left and right:
+        if not left and right:  # 有一个遍历完，另一个没有遍历完，不是对称树
             return False
         if left and not right:
             return False
 
-        if left.val != right.val:
+        if left.val != right.val:  # 左子树节点值不等于右子树节点值，不是对称树
             return False
 
         left = self.check_tree(left.left, right.right)   # 递归左子树的左子结点和右子树的右子结点
         right = self.check_tree(left.right, right.left)  # 递归左子树的右子结点和右子树的左子结点
         return left and right
 
-    def is_symmetrical(self, root):
+    def is_symmetrical_v2(self, root):
         # 迭代实现：类似与层次遍历
         if not root:
             return True

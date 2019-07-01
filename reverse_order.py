@@ -44,7 +44,7 @@ class ReverseOrder(object):
                 i += 1
             else:
                 res.append(lst2[j])
-                self.count += len(lst1) - i  # 当右半部分的元素先于左半部分元素进入有序列表时，逆序对数量增加左半部分剩余的元素数
+                self.count += len(lst1) - i  # 当右半部分的元素先于左半部分元素进入有序列表时(左边大右边小)，逆序对数量增加左半部分剩余的元素数
                 j += 1
 
         res += lst1[i:]

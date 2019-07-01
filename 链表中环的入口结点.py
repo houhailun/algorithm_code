@@ -16,28 +16,6 @@
 
 class Solution:
     def entry_node_of_loop(self, pHead):
-        if pHead is None:
-            return None
-
-        slow = pHead
-        fast = pHead.next
-        while slow:
-            if fast == slow:
-                return slow
-            slow = slow.next
-            fast = fast.next.next
-        return None
-
-    def entry_node_of_loop_2(self, pHead):
-        p = pHead
-        tmp = []
-        while p:
-            if p in tmp:
-                return p
-            tmp.append(p)
-        return None
-
-    def entry_node_of_loop_3(self, pHead):
         node = self.meet_nodes(pHead)
         if node is None:
             return None

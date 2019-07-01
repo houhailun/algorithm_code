@@ -11,7 +11,6 @@
 """
 
 
-
 class Solution:
     def __init__(self):
         self.table = [0]*256

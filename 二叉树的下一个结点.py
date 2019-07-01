@@ -43,4 +43,4 @@ class Solution:
             proot = pNode.next
             if proot.left == pNode:  # pNode是父节点左孩子
                 return proot
-            pNode = pNode.next
+            pNode = pNode.next  # pNode是父节点右孩子
