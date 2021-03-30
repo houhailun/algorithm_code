@@ -25,6 +25,7 @@ class Solution:
         def pre_order(root):
             if not root:
                 res.append('#')  # #表示空
+                return
             res.append(str(root.val))
             pre_order(root.left)   # 递归遍历左子树
             pre_order(root.right)  # 递归遍历右子树

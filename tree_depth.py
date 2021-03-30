@@ -34,7 +34,7 @@ class Solution:
         return self.tree_depth(pRoot)
 
     def tree_depth(self, tree):
-        q = []
+        q = list()
         q.append(tree)
         count = 0
         while len(q) != 0:

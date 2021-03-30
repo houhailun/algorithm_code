@@ -41,10 +41,10 @@ class Solution:
                 return False
             else:
                 cards[num] = 1
-        return True if max(cards.keys())-min(cards.keys()) < 4 else False
+        return True if max(cards.keys())-min(cards.keys()) <= 4 else False
 
 
 if __name__ == "__main__":
     cls = Solution()
-    print(cls.is_continuous([0,1,2,3,6]))
-    print(cls.is_continuous_2([0,1,2,3,6]))
+    # print(cls.is_continuous([0,1,2,3,6]))
+    print(cls.is_continuous_2([1,2,3,4,5]))

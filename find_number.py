@@ -62,8 +62,8 @@ def reverse_print_link_list_v2(links):
 思路：前序遍历：根-左-右   中序遍历：左-根-右
     根据前序遍历可以得到根节点，构建根节点进而得到左子树和右子树，分别对左右子树递归构建
 """
-class TreeNode(value):
-    def __init__(self):
+class TreeNode:
+    def __init__(self, value):
         self.data = value
         self.left = None
         self.right = None
@@ -72,7 +72,7 @@ class TreeNode(value):
 def rebuild_tree(preorder=None, inorder=None):
     if not preorder or not inorder:
         return False
-    index = inorder.index(preorder[0]) # 在中序遍历序列中查找根节点下标
+    index = inorder.index(preorder[0])  # 在中序遍历序列中查找根节点下标
     left = inorder[: index]    # 左子树节点
     right = inorder[index+1:]  # 右子树节点
     root = TreeNode(preorder[0])  # 构建root结点

@@ -53,4 +53,4 @@ class Solution:
 
 if __name__ == "__main__":
     cls = Solution()
-    print(cls.GetNumberOfK([1,2,3,4,5,6], 3))
+    print(cls.GetNumberOfK([1,2,3,3,5,6], 3))

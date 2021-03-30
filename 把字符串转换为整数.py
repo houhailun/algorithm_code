@@ -33,7 +33,6 @@ class Solution:
         return ret if positive else (0-ret)
 
     def to_str(self, s):
-        s = ''.join(s)
         ret = s
         if s[0] == '+' or s[0] == '-':
             ret = s[1:]

@@ -20,7 +20,7 @@ class Solution:
         while num2 != 0:
             sum = (num1 ^ num2)
             carray = ((num1 & num2) << 1) & 0xFFFFFFFF
-            if carray > 0x7FFFFFFF:
+            if carray > 0x7FFFFFFF:  #  carry
                 carray = -((~carray-1) & 0xFFFFFFFF)
             num1 = sum
             num2 = carray

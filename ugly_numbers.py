@@ -59,7 +59,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    ugly = Solution(5)
+    ugly = Solution(19)
     print(ugly.ugly_1())
 
     print(ugly.ugly_2())

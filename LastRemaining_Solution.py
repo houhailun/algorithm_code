@@ -18,7 +18,7 @@ class Solution:
         people = list(range(1, n+1))
         p = 0
         while True:
-            if len(people) == 1:
+            if len(people) == 1:  # 只有最后一个时跳出
                 break
             p = (p + (m-1)) % len(people)  # 更新p
             del people[p]
